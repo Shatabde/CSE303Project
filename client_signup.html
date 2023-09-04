@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Client's Information</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="css/montserrat-font.css">
+	<link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="templates/client_signup/css/style.css"/>
+</head>
+<body class="form-v10">
+	<div class="page-content">
+		<div class="form-v10-content">
+			<form class="form-detail" action="client_register.php" method="post" id="myform">
+				<div class="form-left">
+					<h2>Client's General Infomation</h2>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="number" name="nid" placeholder="NID" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="title" class="input-text" placeholder="Title" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="name" class="input-text" placeholder="Your Name" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="fathers_name" class="input-text" placeholder="Father's Name" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="mothers_name" class="input-text" placeholder="Mother's Name" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="husbands_name" placeholder="Spouse's Name" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<p class="form-row">Date of Birth</p>
+						<div class="form-row form-row-1">
+							<input type="date" name="dob" class="input-text" placeholder="Date of Birth" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="occupation" class="input-text" placeholder="Occupation" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="gender" class="input-text" placeholder="Gender" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row">
+							<input type="text" name="nationality" placeholder="Your Nationality" required>
+						</div>
+						
+					</div>
+					<h2>Account Types</h2>
+					<div>
+						<ul>
+							<li style="margin-left: 50px; margin-top: -30px; color: #2271dd;">Individual</li>
+							<li style="margin-left: 50px; color: #2271dd;">Joint</li>
+							<li style="margin-left: 50px; color: #2271dd;">Corporate</li>
+						</ul>
+					</div>
+					<div class="form-group">
+						<div class="form-row">
+							<input type="text" name="type" placeholder="Enter Account type" required>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="form-right">
+					<h2>Client's Contact Details</h2>
+					<div class="form-row">
+						<input type="text" name="present_address" placeholder="Your Present Address" required>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="present_city" placeholder="Present City" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="present_post" placeholder="Present Post" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="present_thana" placeholder="Present Thana" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="present_division" placeholder="Present Division" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="present_country" placeholder="Present Country" required>
+						</div>
+					</div>
+
+					<div class="form-row">
+						<input type="text" name="permanent_address" placeholder="Permanent Address" required>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="permanent_city" placeholder="Permanent City" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="permanent_post" placeholder="Permanent Post" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="permanent_thana" placeholder="Thana" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="permanent_division" placeholder="Permanent Division" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row">
+							<input type="text" name="permanent_country" placeholder="Permanent Country" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="mobile" placeholder="Mobile" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="tel" placeholder="Telephone" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-row">
+							<input type="email" name="email" placeholder="Email Address" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="form-row form-row-1">
+							<input type="text" name="etin" placeholder="E-TIN" required>
+						</div>
+						<div class="form-row form-row-2">
+							<input type="text" name="ppno" placeholder="Passport No" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+                        <div class="form-row">
+                            <button type="submit" class="form-control btn btn-primary submit px-3">Register</button>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <div class="form-row">
+                            <p><a href="nominee_signup.html" style="color: white;">Click Here to give the Nominee Information</a></p>
+                        </div>
+                    </div> -->
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

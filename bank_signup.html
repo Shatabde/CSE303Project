@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bank Details</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="css/montserrat-font.css">
+	<link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="templates/client_signup/css/style.css"/>
+</head>
+<body class="form-v10">
+    <div class="page-content">
+		<div class="form-v10-content">
+			<form class="form-detail" action="bank_register.php" method="post" id="myform">
+				<div class="form-left">
+					<h2>Bank Infomation</h2>
+					<div class="form-group">
+						<div class="form-row">
+							<input type="number" name="bank_code" placeholder="Bank Code" required>
+						</div>
+					</div>
+
+                    <div class="form-group">
+						<div class="form-row">
+							<input type="text" name="bank_branch_code" placeholder="Bank Branch Code" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="form-row">
+							<input type="number" name="routing_no" placeholder="Routing No." required>
+						</div>
+					</div>
+					<div class="form-group">
+                        <div class="form-row">
+							<input type="number" name="bank_account_no" placeholder="Bank Account No." required>
+						</div>
+					</div>
+					<div class="form-group">
+                        <div class="form-row">
+                            <button type="submit" class="form-control btn btn-primary submit px-3">Register</button>
+                        </div>
+                    </div>
+				</div>
+				
+				<!-- <div class="form-right">
+                    <div style="text-align: center;">
+                        <h1 style="color: white;">Bank Details</h1>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <button type="submit" class="form-control btn btn-primary submit px-3">Register</button>
+                        </div>
+                    </div>
+
+                    
+				</div> -->
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Signup Form</title>
+</head>
+<body>
+    <div class="signup-container">
+        <form action="guardian_register.php" method="post">
+
+            <input type="number" name="nid" placeholder="Guardian's NID" required>
+            <input type="text" name="name" placeholder="Guardian's Name" required>
+            <input type="date" name="dob" placeholder="Guardian's Date of Birth" required>
+            <input type="text" name="address" placeholder="Guardian's Address" required>
+            <input type="text" name="mobile" placeholder="Guardian's Mobile" required>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
