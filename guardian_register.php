@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "sirat";
-$password = "000999";
+$username = "root";
+$password = "";
 $dbname = "i-broker";
 
 // Creating connection

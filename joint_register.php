@@ -36,7 +36,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $etin = $_POST["etin"];
     $ppno = $_POST["ppno"];
 
-    $sql = "INSERT INTO  joint_account_t VALUES('$nid', '$name', '$title','$fathers_name', '$mothers_name', '$spouse_name', '$dob', '$gender', '$nationality', '$address', '$city', '$post', '$thana', '$division', '$country', '$mobile', '$occupation', '$email', '$etin', '$ppno')";
+    $uploadOk = 1;
+    $photo1_name = $_FILES["photo1"]["name"];
+    $photo1_tmp = $_FILES["photo1"]["tmp_name"];
+    $photo1_path = "uploads/" . $photo1_name;
+    move_uploaded_file($photo1_tmp, $photo1_path);
+
+    // Handle photo 2 upload
+    $photo2_name = $_FILES["photo2"]["name"];
+    $photo2_tmp = $_FILES["photo2"]["tmp_name"];
+    $photo2_path = "uploads/" . $photo2_name;
+    move_uploaded_file($photo2_tmp, $photo2_path);
+
+    $sql = "INSERT INTO  joint_account_t VALUES('$nid', '$name', '$title','$fathers_name', '$mothers_name', '$spouse_name', '$dob', '$gender', '$nationality', '$address', '$city', '$post', '$thana', '$division', '$country', '$mobile', '$occupation', '$email', '$etin', '$ppno', '$photo1_path', '$photo2_path')";
     
     if ($conn->query($sql) === TRUE) {
         echo "Data updated successfully!";

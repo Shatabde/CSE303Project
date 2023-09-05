@@ -44,14 +44,41 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $ppno = $_POST["ppno"];
     $type = $_POST["type"];
 
-    $sql = "INSERT INTO client_t(c_nid, c_title, c_name, c_father_name, c_spouse_name, c_mother_name, c_dob, c_gender, c_nationality, c_present_address, c_present_city, c_present_post, c_present_thana, c_present_division, c_present_country, c_permanent_address, c_permanent_city, c_permanent_post, c_permanent_thana, c_permanent_division, c_permanent_country, c_mobile, c_tel, c_occupation, c_email, c_etin, c_ppno, c_account_type) VALUES('$nid', '$title', '$name', '$fathers_name', '$husbands_name', '$mothers_name', '$dob', '$gender', '$nationality', '$present_address', '$present_city', '$present_post', '$present_thana', '$present_division', '$present_country', '$permanent_address', '$permanent_city', '$permanent_post', '$permanent_thana', '$permanent_division', '$permanent_country', '$mobile', '$tel', '$occupation', '$email', '$etin', '$ppno', '$type')";
+    // $url = "client_photo_upload.php" .urlencode($nid);
+    // header("Location: " . $url);
 
-    if ($type == "Joint" || $type == "joint") {
-        header('Location: joint_signup.html');
-    }
-    elseif ($type == "Corporate" || $type == "corporate") {
-        header('Location: authorised_person_signup.html');
-    }
+
+
+
+
+
+    // $targetDirectory = "uploads/";
+    // $targetFile1 = $targetDirectory . basename($_FILES["photo1"]["name"]);
+    // $uploadOk = 1;
+    // $imageFileType1 = strtolower(pathinfo($targetFile1, PATHINFO_EXTENSION));
+
+    // $targetDirectory = "uploads/";
+    // $targetFile2 = $targetDirectory . basename($_FILES["photo2"]["name"]);
+    // $uploadOk = 1;
+    // $imageFileType2 = strtolower(pathinfo($targetFile2, PATHINFO_EXTENSION));
+
+
+
+
+
+    $uploadOk = 1;
+    $photo1_name = $_FILES["photo1"]["name"];
+    $photo1_tmp = $_FILES["photo1"]["tmp_name"];
+    $photo1_path = "uploads/" . $photo1_name;
+    move_uploaded_file($photo1_tmp, $photo1_path);
+
+    // Handle photo 2 upload
+    $photo2_name = $_FILES["photo2"]["name"];
+    $photo2_tmp = $_FILES["photo2"]["tmp_name"];
+    $photo2_path = "uploads/" . $photo2_name;
+    move_uploaded_file($photo2_tmp, $photo2_path);
+
+    $sql = "INSERT INTO client_t VALUES('$nid', '$title', '$name', '$fathers_name', '$husbands_name', '$mothers_name', '$dob', '$gender', '$nationality', '$present_address', '$present_city', '$present_post', '$present_thana', '$present_division', '$present_country', '$permanent_address', '$permanent_city', '$permanent_post', '$permanent_thana', '$permanent_division', '$permanent_country', '$mobile', '$tel', '$occupation', '$email', '$etin', '$ppno', '$type', '$photo1_path', '$photo2_path')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Data updated successfully!";
@@ -60,6 +87,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     else {
         echo "Error updating data: " . $conn->error;
     }
+
+    if ($type == "Joint" || $type == "joint") {
+        header('Location: joint_signup.html');
+    }
+    elseif ($type == "Corporate" || $type == "corporate") {
+        header('Location: authorised_person_signup.html');
+    }
+
 }
 
 $conn->close();

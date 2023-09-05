@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     if ($conn->query($sql) === TRUE) {
         echo "Data updated successfully!";
-        header('Location: add_client_photo.html');
+        header('Location: welcome.html');
     } else {
         echo "Error updating data: " . $conn->error;
     }

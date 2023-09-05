@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "sirat";
-$password = "000999";
+$username = "root";
+$password = "";
 $dbname = "i-broker";
 
 // Creating connection
@@ -32,7 +32,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $p_fax = $_POST["fax"];
     $p_email = $_POST["email"];
 
-    $sql = "INSERT INTO  power_of_atorny_t(p_nid, p_title, p_name, p_dob, p_nationality, p_address, p_city, p_post, p_thana, p_division, p_country, p_mobile, p_tel, p_email, p_fax, p_ppno) VALUES('$p_nid', '$p_title', '$p_name','$p_dob','$p_nationality', '$p_address', '$p_city', '$p_post', '$p_state', '$p_division', '$p_country', '$p_mobile', '$p_tel', '$p_email', '$p_fax', '$p_ppno')";
+    $uploadOk = 1;
+    $photo1_name = $_FILES["photo1"]["name"];
+    $photo1_tmp = $_FILES["photo1"]["tmp_name"];
+    $photo1_path = "uploads/" . $photo1_name;
+    move_uploaded_file($photo1_tmp, $photo1_path);
+
+    // Handle photo 2 upload
+    $photo2_name = $_FILES["photo2"]["name"];
+    $photo2_tmp = $_FILES["photo2"]["tmp_name"];
+    $photo2_path = "uploads/" . $photo2_name;
+    move_uploaded_file($photo2_tmp, $photo2_path);
+
+    $sql = "INSERT INTO  power_of_atorny_t VALUES('$p_nid', '$p_title', '$p_name','$p_dob','$p_nationality', '$p_address', '$p_city', '$p_post', '$p_state', '$p_division', '$p_country', '$p_mobile', '$p_tel', '$p_email', '$p_fax', '$p_ppno', '$photo1_path', '$photo2_path')";
     
     if ($conn->query($sql) === TRUE) {
         echo "Data updated successfully!";

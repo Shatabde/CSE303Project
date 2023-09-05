@@ -1,8 +1,8 @@
 <?php
 
 $servername = "localhost";
-$username = "sirat";
-$password = "000999";
+$username = "root";
+$password = "";
 $dbname = "i-broker";
 
 // Creating connection
@@ -30,7 +30,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $n_percentage = $_POST["percentage"];
     $n_ppno = $_POST["ppno"];
 
-    $sql = "INSERT INTO Nominee_T(n_nid, n_name, n_dob, n_gender, n_nationality, n_address, n_city, n_post, n_thana, n_division, n_mobile, n_relation, n_percentage, n_ppno) VALUES(
+
+    $uploadOk = 1;
+    $photo1_name = $_FILES["photo1"]["name"];
+    $photo1_tmp = $_FILES["photo1"]["tmp_name"];
+    $photo1_path = "uploads/" . $photo1_name;
+    move_uploaded_file($photo1_tmp, $photo1_path);
+
+    // Handle photo 2 upload
+    $photo2_name = $_FILES["photo2"]["name"];
+    $photo2_tmp = $_FILES["photo2"]["tmp_name"];
+    $photo2_path = "uploads/" . $photo2_name;
+    move_uploaded_file($photo2_tmp, $photo2_path);
+
+    $sql = "INSERT INTO Nominee_T VALUES(
     '$n_nid',
     '$n_name',
     '$n_dob',
@@ -44,7 +57,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     '$n_mobile', 
     '$nom_relation_with_client', 
     '$n_percentage', 
-    '$n_ppno')";
+    '$n_ppno',
+    '$photo1_path',
+    '$photo2_path')";
+
+
     
     if ($conn->query($sql) === TRUE) {
         echo "Data updated successfully!";

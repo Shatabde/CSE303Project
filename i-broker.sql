@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2023 at 05:29 PM
+-- Generation Time: Sep 05, 2023 at 01:21 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -65,7 +65,9 @@ CREATE TABLE `bank_t` (
 --
 
 INSERT INTO `bank_t` (`bank_code`, `branch_code`, `route_no`, `bank_account_no`) VALUES
-(7890, 6809, 456789, 55669988);
+(1234, 6809, 8520, 96321478),
+(7890, 6809, 456789, 55669988),
+(42369852, 6809, 336699, 55882244);
 
 -- --------------------------------------------------------
 
@@ -135,8 +137,9 @@ CREATE TABLE `client_t` (
 --
 
 INSERT INTO `client_t` (`c_nid`, `c_title`, `c_name`, `c_father_name`, `c_spouse_name`, `c_mother_name`, `c_dob`, `c_gender`, `c_nationality`, `c_present_address`, `c_present_city`, `c_present_post`, `c_present_thana`, `c_present_division`, `c_present_country`, `c_permanent_address`, `c_permanent_city`, `c_permanent_post`, `c_permanent_thana`, `c_permanent_division`, `c_permanent_country`, `c_mobile`, `c_tel`, `c_occupation`, `c_email`, `c_etin`, `c_ppno`, `c_account_type`, `c_photo`, `c_sig`) VALUES
-(1122334466, 'Ms', 'Nahian Noureen', 'Shahadat Hossain', 'N/A', 'Layla Hossain', '1999-04-28 00:00:00', 'Female', 'Bangladeshi', 'Bashundhara R/A', 'Dhaka', '1213', 'Vatara', 'Dhaka', 'Bangladesh', 'Natore Sadar', 'Natore', '5500', 'Natore Sadar', 'Rajshahi', 'Bangladesh', '12345678901', '12345678', 'Student', 'nahiannoureen@email.com', 'NN123', 'NN1234567', 'Individual', '', ''),
-(2147483647, 'Mr.', 'Habibullah Sirat', 'Md. Shohidul Islam', 'N/A', 'Sabina Islam', '1999-11-07 00:00:00', 'Male', 'Bangladeshi', 'Bashundhara R/A', 'Dhaka', '1213', 'Vatara', 'Dhaka', 'Bangladesh', 'Pabna Sadar', 'Pabna', '6600', 'Pabna Sadar', 'Rajshahi', 'Bangladesh', '12345678901', '12345678', 'Student', 'habibullahsirat@email.com', 'ET123', 'AS1234567', 'Individual', '', '');
+(1931291, 'Mr.', 'Habibullah Sirat', 'Shohidul Islam', 'N/A', 'Sabina Islam', '1999-11-07 00:00:00', 'Male', 'Bangladeshi', 'Bashundhara R/A', 'Dhaka', '1213', 'Vatara', 'Dhaka', 'Bangladesh', 'Pabna Sadar', 'Pabna', '6600', 'Pabna Sadar', 'Rajshahi', 'Bangladesh', '1234567890', '12345678', 'Student', 'habibullahsirat@email.com', 'ET123', 'HS1234567', 'Individual', 'uploads/', 'uploads/'),
+(2320608, 'Ms', 'Nahian Noureen', 'Shahadat Hossain', 'N/A', 'Layla Hossain', '1999-04-28 00:00:00', 'Female', 'Bangladeshi', 'Bashundhara R/A', 'Dhaka', '1213', 'Vatara', 'Dhaka', 'Bangladesh', 'Natore Sadar', 'Natore', '5500', 'Natore Sadar', 'Rajshahi', 'Bangladesh', '1234567890', '12345678', 'Student', 'nahiannoureen@email.com', 'NN123', 'NN1234567', 'Individual', 'uploads/', 'uploads/'),
+(2320609, 'Ms', 'Nahian Nishat', 'Sha Alom Hossain', 'N/A', 'Runa Layla', '1999-04-28 00:00:00', 'Female', 'Bangladeshi', 'Halishohor', 'Chittagong', '1213', 'Chitagong Sadar', 'Chittagong', 'Bangladesh', 'Halishohor', 'Chittagong', '7700', 'Halishohor', 'Chittagong', 'Bangladesh', '1234567890', '12345678', 'Student', 'nahiannishat@email.com', 'NN123', 'NN1234567', 'Individual', 'uploads/', 'uploads/');
 
 -- --------------------------------------------------------
 
@@ -204,7 +207,7 @@ CREATE TABLE `intoducer_t` (
 --
 
 INSERT INTO `intoducer_t` (`i_nid`, `i_name`, `i_contact`, `i_email`, `i_occupation`) VALUES
-(118899, 'Mamun Or Rashid Sumon', '2233445566', 'mamunorrashid@email.com', 'Business');
+(1531176, 'Nahian Noureen', '2233445566', 'nahiannoureen@email.com', 'Student');
 
 -- --------------------------------------------------------
 
@@ -306,7 +309,7 @@ CREATE TABLE `nominee_t` (
 --
 
 INSERT INTO `nominee_t` (`n_nid`, `n_name`, `n_dob`, `n_gender`, `n_nationality`, `n_address`, `n_city`, `n_post`, `n_thana`, `n_division`, `n_mobile`, `n_relation`, `n_percentage`, `n_ppno`, `n_photo`, `n_sig`) VALUES
-(12345, 'Habibullah Sirat', '1999-11-07 00:00:00', 'Male', 'Bangladeshi', 'Bashundhara R/A', 'Dhaka', '1213', 'Vatara', 'Dhaka', '12345678901', 'Cousin', '50', 'HS1234567', NULL, NULL);
+(2320608, 'Nahian Noureen', '2000-04-28 00:00:00', 'Female', 'Bangladeshi', 'Bashundhara R/A', 'Dhaka', '1213', 'Vatara', 'Dhaka', '12345678901', 'Cousin', '50', 'NN1234567', 'uploads/', 'uploads/');
 
 -- --------------------------------------------------------
 
@@ -340,7 +343,7 @@ CREATE TABLE `power_of_atorny_t` (
 --
 
 INSERT INTO `power_of_atorny_t` (`p_nid`, `p_title`, `p_name`, `p_dob`, `p_nationality`, `p_address`, `p_city`, `p_post`, `p_thana`, `p_division`, `p_country`, `p_mobile`, `p_tel`, `p_email`, `p_fax`, `p_ppno`, `p_photo`, `p_sig`) VALUES
-(2147483647, 'Mr', 'Habibullah Sirat', '1999-11-07 00:00:00', 'Bangladeshi', 'Bashundhara R/A', 'Dhaka', '1213', 'Vatara', 'Dhaka', 'Bangladesh', '12345678901', '12345678', 'habibullahsirat@email.com', '223344', 'HS1234567', NULL, NULL);
+(1456987, 'Ms', 'Nahian Noureen', '2000-04-28 00:00:00', 'Bangladeshi', 'Bashundhara R/A', 'Dhaka', '1213', 'Vatara', 'Dhaka', 'Bangladesh', '12345678901', '12345678', 'nahiannoureen@email.com', '223344', 'HS1234567', NULL, NULL);
 
 -- --------------------------------------------------------
 

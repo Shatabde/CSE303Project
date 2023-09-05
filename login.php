@@ -18,28 +18,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = $_POST["name"];
     $user_type = $_POST["user_type"];
 
-    if ($user_type === "Client") {
-        $sql = "SELECT c_NID, c_name FROM client_t WHERE c_NID = '$nid' AND c_name = '$name'";
-        $result = $conn->query($sql);
+    // if ($user_type === "Client") {
+    //     $sql = "SELECT c_NID, c_name FROM client_t WHERE c_NID = '$nid' AND c_name = '$name'";
+    //     $result = $conn->query($sql);
 
-        if ($result->num_rows === 1) {
+    //     if ($result->num_rows === 1) {
 
-            echo "Login successful!";
-            echo "<h1>Welcome $name</h1>";
+    //         echo "Login successful!";
+    //         echo "<h1>Welcome $name</h1>";
         
-        } else {
-            echo "Login failed. Please check your username and password.";
-        }
-    }
+    //     } else {
+    //         echo "Login failed. Please check your username and password.";
+    //     }
+    // }
 
-    elseif ($user_type === "Customer Relationship Manager") {
+    if ($user_type === "Customer Relationship Manager") {
         $sql = "SELECT c_r_m_id, c_r_m_name FROM customer_relation_manager_t WHERE c_r_m_id = '$nid' AND c_r_m_name = '$name'";
         $result = $conn->query($sql);
 
         if ($result->num_rows === 1) {
 
             echo "Login successful!";
-            echo "<h1>Welcome $name</h1>";
+            header('Location: crm_page.html');
         
         } else {
             echo "Login failed. Please check your username and password.";
@@ -53,7 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($result->num_rows === 1) {
 
             echo "Login successful!";
-            echo "<h1>Welcome $name</h1>";
+            header('Location: crm_page.html');
+
         
         } else {
             echo "Login failed. Please check your username and password.";
